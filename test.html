@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>How to disable scrolling 
+	temporarily using JavaScript?</title> 
+  <style> 
+  #myDIV {
+    height: 500px;
+  }
+		.scrollable-place { 
+      height: 1000px; 
+      background-color: lawngreen;
+		} 
+		
+		.stop-scrolling { 
+			height: 100%; 
+			overflow: hidden; 
+		} 
+	</style> 
+</head> 
+
+<body> 
+  <div id="myDIV">
+	<h1 style="color: green">GeeksforGeeks</h1> 
+	<b>How to disable scrolling temporarily using JavaScript?</b> 
+	
+  <p>Click on the buttons below to enable or disable scrolling.</p> 
+</div>
+	
+	<!-- <p class="scrollable-place"> 
+		<button onclick="disableScroll()">Disable Scrolling</button> 
+		<button onclick="enableScroll()">Enable Scrolling</button> 
+	</p>  -->
+
+	<script> 
+
+    document.getElementById("myDIV").addEventListener("scroll", myFunction);
+
+
+
+    function myFunction() {
+      ///document.getElementById("demo").innerHTML = "You scrolled in div.";
+      document.body.classList.add("stop-scrolling"); 
+      console.log('test');
+    }
+
+		function disableScroll() { 
+			document.body.classList.add("stop-scrolling"); 
+     
+		} 
+
+		function enableScroll() { 
+			document.body.classList.remove("stop-scrolling"); 
+		} 
+	</script> 
+</body> 
+
+</html> 
